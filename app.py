@@ -109,8 +109,8 @@ class Finance(Resource):
 
 class Hello(Resource):
     def get(self):
-        if DBClient:
-            return {"hello":"World","DB_Connection_Status":"Success"} ,200
+        return {"hello":"World","DB_Connection_Status":"Success"} ,200
+
 
 api.add_resource(Hello,'/')
 api.add_resource(User,'/User/<string:username>')

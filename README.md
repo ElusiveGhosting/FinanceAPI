@@ -2,11 +2,11 @@
 
 1. Clone the repository
 
-           $ git clone
+           $ git clone https://github.com/ElusiveGhosting/FinanceAPI.git
 
 2. Change in the code directory
 
-           $ cd https://github.com/ElusiveGhosting/FinanceAPI.git
+           $ cd FinanceAPI/
 
 3. Change into "flask-restful" branch
 
@@ -14,17 +14,32 @@
 
 4. DB setup via MONGODB (Account required - Free Tier: https://cloud.mongodb.com/)
 
-           a. Create database "myapi"
-           b. Create 2 collections inside the created DB called "finance" and "user"
-           c. Create access credentials
-           d. Add access from anywhere for the database using the Network Access tab to prevent access getting blocked
+           a. Create a cluster which will host your DB
+           b. Create database "myapi"
+           c. Create 2 collections inside the created DB called "finance" and "user"
+           d. Create access credentials
+           e. Add access from anywhere for the database using the Network Access tab to prevent access getting blocked
 
-5. Deployment
+5. Setup environment Variables to store DB credentials:
+
+           a. Get connection string to configure environment variables by clicking on connect in Cluster Dashboard in MongoDB
+           b. Connection URL will be like "mongodb+srv://<clustername>:<password>@<clustername>.redacted.mongodb.net?retryWrites=true&w=majority"
+           c. Split them into 3 parts as mentioned below:
+                            connectionURL1 : mongodb+srv://<clustername>:
+                            MONGODB_PASSWORD : password
+                            connectionURL2 : @<clustername>.redacted.mongodb.net?retryWrites=true&w=majority
+           d. run export command to set environment variables used for DB connection
+           e. run $ export MONGODB_PASSWORD="<password>"
+           f. $ export connectionURL1="mongodb+srv://<clustername>:
+           g. $ export connectionURL2="@<clustername>.equoy0q.mongodb.net/?retryWrites=true&w=majority  
+
+
+6. Deployment
 
            $ python app.py
 
 
-6. Testing Deployment :
+7. Testing Deployment :
 
    Postman :
 
@@ -35,4 +50,4 @@
    Curl :
 
     		  $ curl -i http://127.0.0.1:5000
-    		    {'hello': 'world'}
+    		    {"hello":"World","DB_Connection_Status":"Success"}
