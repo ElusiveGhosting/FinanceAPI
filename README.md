@@ -1,5 +1,11 @@
 # FinanceAPI using Flask-RESTful
 
+This is API built using Flask-Restful library with cloud-based MongoDB backend for data storage. It supports CRUD( Create Read Update Delete) for users and their financial data for easy management of individual finances.
+
+
+
+# Setup
+
 1. Clone the repository
 
            $ git clone https://github.com/ElusiveGhosting/FinanceAPI.git
