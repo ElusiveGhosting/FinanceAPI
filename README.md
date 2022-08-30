@@ -2,6 +2,8 @@
 
 This is API built using Flask-Restful library with cloud-based MongoDB backend for data storage. It supports CRUD( Create Read Update Delete) for users and their financial data for easy management of individual finances.
 
+UI is currently not added as it's API backend infrastructure alone. API can be integrated to frontend using requests sent to API behind the scenes and serving the response data.
+
 
 
 # Setup
